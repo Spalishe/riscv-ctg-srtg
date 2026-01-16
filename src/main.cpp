@@ -18,8 +18,6 @@ string execute_line(string &name, vector<string> &args, int index) {
     return TEST_IMM_OP(args, index);
   } else if (name == "TEST_CASE") {
     return TEST_CASE(args, index);
-  } else if (name == "TEST_BRANCH_OP") {
-    return TEST_BRANCH_OP(args, index);
   }
   return "";
 }

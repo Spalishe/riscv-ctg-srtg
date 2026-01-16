@@ -5,3 +5,4 @@ std::string generate_asm(std::string &contents);
 std::string TEST_RR_OP(std::vector<std::string> args, int index);
 std::string TEST_IMM_OP(std::vector<std::string> args, int index);
 std::string TEST_CASE(std::vector<std::string> args, int index);
+std::string TEST_BRANCH_OP(std::vector<std::string> args, int index);

@@ -15,7 +15,7 @@ string TEST_RR_OP(vector<string> args, int index) {
   uint64_t reqval = stoull(args[4], nullptr, 16);
   uint64_t op1val = stoull(args[5], nullptr, 16);
   uint64_t op2val = stoull(args[6], nullptr, 16);
-  int temp_op = stoi(args[7].substr(2), nullptr, 10);
+  int temp_op = stoi(args[9].substr(2), nullptr, 10);
 
   stringstream as;
 

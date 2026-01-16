@@ -14,6 +14,10 @@ using namespace std;
 string execute_line(string &name, vector<string> &args, int index) {
   if (name == "TEST_RR_OP") {
     return TEST_RR_OP(args, index);
+  } else if (name == "TEST_IMM_OP") {
+    return TEST_IMM_OP(args, index);
+  } else if (name == "TEST_CASE") {
+    return TEST_CASE(args, index);
   }
   return "";
 }
@@ -70,7 +74,10 @@ int main(int argc, char *argv[]) {
       string name;
       vector<string> args;
       if (parse_line(istr, name, args)) {
-        as << execute_line(name, args, test_index) << endl;
+        string s = execute_line(name, args, test_index);
+        if (s == "")
+          continue;
+        as << s << endl;
         test_index++;
         c++;
       }

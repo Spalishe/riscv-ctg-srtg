@@ -17,8 +17,9 @@ string TEST_IMM_OP(vector<string> args, int index) {
 
   stringstream as;
 
-  as << format("// opcode: {:}; op1: x{:}; dest: x{:}; reqval: "
-               "0x{:x}; op1val: 0x{:x}; immval: 0x{:x}; temp_op: x{:}",
+  as << format("// opcode: {:}; op1: x{:}; dest: x{:}; reqval: 0x{:x}; op1val: "
+               "0x{:x}; immval: 0x{:x}; temp_op: "
+               "x{:}",
                opcode, op1, dest, reqval, op1val, immval, temp_op)
      << endl;
 
@@ -30,7 +31,7 @@ string TEST_IMM_OP(vector<string> args, int index) {
   as << format("  li x{:}, 0x{:x}", op1, op1val) << endl;
   as << format("  li x{:}, 0x{:x}", temp_op, reqval) << endl;
 
-  as << format("  {:} x{:}, x{:}, x{:}", opcode, dest, op1, immval) << endl;
+  as << format("  {:} x{:}, x{:}, 0x{:x}", opcode, dest, op1, immval) << endl;
   as << format("  bne x{:}, x{:}, fail", dest, temp_op) << endl;
 
   return as.str();

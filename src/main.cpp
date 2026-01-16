@@ -107,7 +107,7 @@ int main(int argc, char *argv[]) {
     new_out_p.erase(pos);
   new_out_p = format("{:}{:}", new_out_p, ".o");
   cout << format("       riscvXX-elf-gcc -march=rvXXima -mabi=lpXX -nostdlib "
-                 "-static {:} -o {:}",
+                 "-Ttext=0x80000000 -static {:} -o {:}",
                  parser.getString(1), new_out_p)
        << endl;
 
